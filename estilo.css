@@ -1,0 +1,143 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: block;
+    position: relative;
+}
+
+/* Navbar */
+nav{
+    background-color: #8aadf5;
+  }
+  
+.navbar-collapse{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+ }
+  
+.text-display{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    -webkit-text-fill-color: #272E3C;  
+    filter: brightness(110%);
+    transition: 0.5s;
+}
+  
+#menu, label {                        /*no muestra el botón de menu ni la etiqueta ☰ */
+    display: none;  
+    color: #8aadf5;   
+}
+  
+
+  
+  li:hover {                        /*determina la propiedad de cada botón cuando se posiciona encima*/
+    filter: brightness(110%);
+    transition: 0.5s;
+  }
+  
+  ul{                     
+    display: flex;
+    justify-content: left;
+    margin-top:0;
+    padding: 0;
+  }
+  
+  li {                   
+    display: block;
+    margin-top: 20px;
+    padding: 5px;
+    list-style: none;
+    width: 100px;
+    text-align: center;
+  }
+  
+  a{
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .text-display:hover{
+    -webkit-text-stroke: 2px #1f2736;
+  }
+  
+  a:hover{
+    color: #272E3C;
+    text-decoration: none;
+    transition: 0.5s;
+  }
+  /*End Navbar*/
+
+main{
+    height: 80vh;
+    background-color: rgb(220, 214, 207);
+}
+
+h2{
+    padding-top: 5%;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+      .navbar-collapse{
+        display: flex;
+        flex-direction: column;
+        
+      }
+
+      input:checked  ~ ul{   /*muestra todas el contenido de todas las etiquetas ul */
+        display: block;
+      }
+    
+      input:checked ~ label{   /*muestra todo el contenido de todas las etiquetas label */
+        background: lightgrey; 
+      }
+    
+      label:hover{                /*cambia el color de ☰ */
+        background: #6B94E5;
+      }
+    
+      li{                         /*elimina el margen  de cada botón */
+           margin: 0px;
+           text-align: left;
+       }
+    
+      label{                      /* dibuja la etiqueta ☰  con formato botón */
+         box-sizing: border-box;
+         display: block;
+         border: 1px solid black;
+         border-radius: 5px;
+         width: 40px;
+         height: 40px;
+         line-height: 40px;
+         font-weight: bold;
+         text-align: center;
+         user-select: none;
+         color: black;  
+         background-color: #778EBB;
+      }
+    
+      ul{                          /*deja de mostrar el bloque contenedor de los botones horizontales */
+         display: none;
+      }
+}
+
+@media (max-width: 576px) {
+    .navbar-nav {
+        font-size: 14px;
+    }
+}
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+    bottom: 0;
+}
